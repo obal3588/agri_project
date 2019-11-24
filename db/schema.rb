@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 2019_11_24_104910) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "fields", force: :cascade do |t|
     t.string "name"
     t.string "crop"
@@ -42,5 +40,4 @@ ActiveRecord::Schema.define(version: 2019_11_24_104910) do
   end
 
   add_foreign_key "fields", "farms"
->>>>>>> f97598c9062088060bb6b67cf6c25207fc6070bf
 end
