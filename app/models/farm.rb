@@ -1,3 +1,3 @@
 class Farm < ApplicationRecord
-    has_many :Field, ,dependent: destroy
+    has_many :fields, , dependent: :destroy
 end
