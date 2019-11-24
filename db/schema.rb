@@ -10,22 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_11_24_120749) do
-=======
 ActiveRecord::Schema.define(version: 2019_11_24_104910) do
->>>>>>> f97598c9062088060bb6b67cf6c25207fc6070bf
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "homes", force: :cascade do |t|
-=======
   create_table "farms", force: :cascade do |t|
     t.string "name"
     t.string "location"
->>>>>>> f97598c9062088060bb6b67cf6c25207fc6070bf
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
