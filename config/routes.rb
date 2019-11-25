@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-
   devise_for :users
   resources :farms do
     resources :fields
   end
-  
-root 'home#index'  
+  get "/makeEmp", to: "home#makeEmp"
+  root "home#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
