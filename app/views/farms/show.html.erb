@@ -1,0 +1,26 @@
+<h1> <%= @farm.name %></h1>
+
+
+<table>
+<tr>
+<th>Name</th>
+<th>Crop</th>
+<th>Created Time</th>
+<th>Updated Time</th>
+</tr>
+</thead>
+<tbody>
+
+<% @fields.each do |field| %>
+<tr>
+<td> <%= field.name %> </td>
+<td> <%=  field.crop %> </td>
+<td> <%= field.created_at %> </td>
+<td> <%= field.updated_at%> </td>
+</td>
+</tr>
+<% end %>
+</body>
+</table>
+
+
