@@ -1,6 +1,6 @@
 class FarmsController < ApplicationController
 
-    def  index 
+    def index 
         @farms = Farm.all
     end
 
@@ -12,7 +12,6 @@ class FarmsController < ApplicationController
         Farm.find(params[:id]).destroy
         redirect_to farms_path
     end
-
     def edit
         @farm = farm.find(params[:id])
     end
