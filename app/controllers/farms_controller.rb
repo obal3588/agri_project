@@ -21,7 +21,6 @@ class FarmsController < ApplicationController
         farm.update(farm_params)
         redirect_to farm
     end
-
     private
     def farm_params
         params.require(:name).permit(:name, :location)

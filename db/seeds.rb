@@ -17,3 +17,4 @@ Field.create(name: 'x', crop:'Carrot', farm_id: 2)
 Field.create(name: 'plot h', crop:'Cucumber', farm_id: 1)
 Field.create(name: 'd', crop:'okra', farm_id: 2)
 Field.create(name: 'plot z', crop:'pumpkin', farm_id: 1)
+
