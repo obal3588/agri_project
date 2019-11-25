@@ -1,9 +1,18 @@
+<table>
+<tr>
+<th>name</th>
+<th>location</th>
+</tr>
+</thead>
+
+<tbody>
 <% @farms.each do |farm| %>
-
-<body>
-
-<%= link_to farm.name, farm_path(farm)%>
-
-</body>
-
+<tr>
+<td> <%= link_to farm.name, farm_path(farm)%> </td>
+<td> <%= link_to farm.location, farm_path(farm)%> </td>
+</td>
+</tr>
 <% end %>
+</body>
+</table>
+
