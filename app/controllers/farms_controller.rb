@@ -13,12 +13,17 @@ class FarmsController < ApplicationController
         @farm = Farm.new
     end
 
+    def create
+        Farm.create(farm_params)
+        redirect_to farms_path
+    end
+
     def destroy
         Farm.find(params[:id]).destroy
         redirect_to farms_path
     end
     def edit
-        @farm = farm.find(params[:id])
+        @farms = Farm.find(params[:id])
     end
 
     def update
@@ -28,6 +33,6 @@ class FarmsController < ApplicationController
     end
     private
     def farm_params
-        params.require(:name).permit(:name, :location)
+        params.require(:farm).permit(:name, :location)
     end
 end

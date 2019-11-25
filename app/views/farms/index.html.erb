@@ -10,9 +10,12 @@
 <tr>
 <td> <%= link_to farm.name, farm_path(farm)%> </td>
 <td> <%= link_to farm.location, farm_path(farm)%> </td>
+
+<td><a data-confirm="Are you sure you want to delete <%= farm.name %>?" data-method="delete" href="/farms/<%= farm.id %>" rel="nofollow">Delete Farms</a> </td>
+<td> <button> <%= link_to "Edit farm", edit_farm_path(farm) %> </button> </td>
 </td>
 </tr>
 <% end %>
 </body>
 </table>
-
+<button> <%= link_to "Add New farm", new_farm_path %> </button>
