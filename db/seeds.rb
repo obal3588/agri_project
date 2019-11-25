@@ -6,18 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Farm.create(name: "farm 1", location: "Al-dilam")
+Farm.create(name: "mr.x farms", location: "Al-khobar")
+Farm.create(name: "farm 3", location: "Riyadh")
+Farm.create(name: "farm 4", location: "Banban")
 
-Farm.create(name: 'farm 1' , location:'Al-dilam')
-Farm.create(name: 'mr.x farms' , location:'Al-khobar')
-Farm.create(name: 'farm 3' , location:'Riyadh')
-Farm.create(name: 'farm 4' , location:'Banban')
+Field.create(name: "plot A", crop: "Pumpkin", farm_id: 1)
+Field.create(name: "x", crop: "Carrot", farm_id: 2)
+Field.create(name: "plot h", crop: "Cucumber", farm_id: 1)
+Field.create(name: "d", crop: "okra", farm_id: 2)
+Field.create(name: "plot z", crop: "pumpkin", farm_id: 1)
+Field.create(name: "plot b", crop: "wheat", farm_id: 3)
+Field.create(name: "plot c", crop: "barley", farm_id: 4)
 
-
-Field.create(name: 'plot A', crop:'Pumpkin', farm_id: 1)
-Field.create(name: 'x', crop:'Carrot', farm_id: 2)
-Field.create(name: 'plot h', crop:'Cucumber', farm_id: 1)
-Field.create(name: 'd', crop:'okra', farm_id: 2)
-Field.create(name: 'plot z', crop:'pumpkin', farm_id: 1)
-Field.create(name: 'plot b', crop:'wheat', farm_id: 3)
-Field.create(name: 'plot c', crop:'barley', farm_id: 4)
-
+User.create! :email => "admin@gmail.com", :password => "123123", :password_confirmation => "123123", :admin => true
+User.create! :email => "emp@gmail.com", :password => "123123", :password_confirmation => "123123", :emp => true
+User.create! :email => "user@gmail.com", :password => "123123", :password_confirmation => "123123", :admin => true
