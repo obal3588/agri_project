@@ -1,0 +1,13 @@
+<%= form_for @farm do |f| %>
+<div>
+ <%= f.label :name, 'Farm Name'%>
+ <%= f.text_field :name%>
+</div>
+
+<div>
+ <%= f.label :location, 'Location' %>
+ <%= f.text_field :location %>
+ </div>
+
+ <%= f.submit "Submit" %>
+ <% end %> 
