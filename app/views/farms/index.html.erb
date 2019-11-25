@@ -10,12 +10,19 @@
 <tr>
 <td> <%= link_to farm.name, farm_path(farm)%> </td>
 <td> <%= link_to farm.location, farm_path(farm)%> </td>
-
+<% if current_user.admin || current_user.emp%>
 <td><a data-confirm="Are you sure you want to delete <%= farm.name %>?" data-method="delete" href="/farms/<%= farm.id %>" rel="nofollow">Delete Farms</a> </td>
 <td><a href="<%= edit_farm_path(farm) %>" > Edit </a></td>
+<%end%>
+
 </td>
 </tr>
 <% end %>
 </body>
 </table>
+<button>  <%= link_to 'sign out' ,destroy_user_session_path,method: :delete  %></button> 
+<button> <%= link_to 'Back', :back %></button> 
+<% if current_user.admin || current_user.emp%>
 <button> <%= link_to "Add New farm", new_farm_path %> </button>
+<%end%>
+
