@@ -1,6 +1,6 @@
 class FarmsController < ApplicationController
     def  index 
-        @farms = Fram.all
+        @farms = Farm.all
     end
     def new
         @farm = Farm.new
