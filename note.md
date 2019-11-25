@@ -6,7 +6,7 @@
     <%end%> -->
 
     ```
-
+<%= link_to  "make emp", admin_makeemp_pathc(user.id) %>
 
 
     class AdminsController < ApplicationController
