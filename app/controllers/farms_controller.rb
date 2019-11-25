@@ -1,6 +1,6 @@
 class FarmsController < ApplicationController
     def  index 
-        @farms = Fram.all
+        @farms = Farm.all
     end
     def new
         @farm = Farm.new
@@ -8,7 +8,7 @@ class FarmsController < ApplicationController
     def destroy
         Farm.find(params[:id]).destroy
         redirect_to farms_path
-
+    end
     def edit
         @farm = farm.find(params[:id])
     end
@@ -21,4 +21,5 @@ class FarmsController < ApplicationController
     private
         def farm_params
             params.require(:name).permit(:name, :location)
-end
+        end
+    end
