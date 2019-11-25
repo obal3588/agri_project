@@ -1,6 +1,6 @@
-admin 
+
 
 <% @users.each do |user|%>
 <h1><%= user.email %></h1>
-
+<%= link_to  "make emp", admin_makeemp_pathc(user.id) %>
 <%end%>

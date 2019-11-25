@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :admins
   devise_for :users
   resources :farms do
     resources :fields
   end
-  get "/admin/makeemp", to: "admins#makeEmp"
+  #get "/admin/makeemp", to: "admins#makeEmp"
   get "/admin/show", to: "admins#show"
   root "home#index"
 
