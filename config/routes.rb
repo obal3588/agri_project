@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :farms do
     resources :fields
   end
-  get "/makeEmp", to: "home#makeEmp"
+  get "/admin/makeemp", to: "admins#makeEmp"
+  get "/admin/show", to: "admins#show"
   root "home#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
