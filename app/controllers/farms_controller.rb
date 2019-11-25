@@ -4,6 +4,11 @@ class FarmsController < ApplicationController
         @farms = Farm.all
     end
 
+    def show
+        @farm = Farm.find(params[:id])
+        @fields = @farm.fields
+    end
+
     def new
         @farm = Farm.new
     end
@@ -21,7 +26,6 @@ class FarmsController < ApplicationController
         farm.update(farm_params)
         redirect_to farm
     end
-
     private
     def farm_params
         params.require(:name).permit(:name, :location)
