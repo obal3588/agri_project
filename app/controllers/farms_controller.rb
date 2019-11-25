@@ -23,11 +23,11 @@ class FarmsController < ApplicationController
         redirect_to farms_path
     end
     def edit
-        @farms = Farm.find(params[:id])
+        @farm = Farm.find(params[:id])
     end
 
     def update
-        farm = farm.find(params[:id])
+        farm = Farm.find(params[:id])
         farm.update(farm_params)
         redirect_to farm
     end
