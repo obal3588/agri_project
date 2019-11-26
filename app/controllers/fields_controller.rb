@@ -1,38 +1,36 @@
 class FieldsController < ApplicationController
-    def index
-        @field = Field.find([:farm_id])
-    end
+  def index
+    @farm = Farm.find(params[:farm_id])
+    @fields = @farm.fields.all
+  end
 
-    def new
-        @farm = Farm.find(params[:farm_id])
-        @field = Field.new
-    end
+  def new
+    @farm = Farm.find(params[:farm_id])
+    @field = @farm.fields.new
+  end
 
-    def create 
-        @farm = Farm.find(params[:farm_id])
-        @field = @farm.fields.create(params.require(:field).permit(:name, :crop, :farm_id))
-        
-        redirect_to farms_path
-    end
+  def create
+    @farm = Farm.find(params[:farm_id])
+    @field = @farm.fields.create(params.require(:field).permit(:name, :crop, :farm_id))
 
-    def edit
-        @farm = Farm.find(params[:farm_id])
-    end
+    redirect_to farms_path
+  end
 
-    def update
-        @farm = Farm.find(params[:farm_id])
-        @field = @farm.fields.update(params.require(:field).permit(:name, :crop, :farm_id))
+  def edit
+    @farm = Farm.find(params[:farm_id])
+  end
 
-        redirect_to farms_path
-    end
+  def update
+    @farm = Farm.find(params[:farm_id])
+    @field = @farm.fields.update(params.require(:field).permit(:name, :crop, :farm_id))
 
-    def destroy
-        @farm = Farm.find(params[:farm_id])
-        @field = @farm.fields(params.require(:field).permit(:name, :crop, :farm_id)).destroy
+    redirect_to farms_path
+  end
 
+  def destroy
+    @farm = Farm.find(params[:farm_id])
+    @field = @farm.fields(params.require(:field).permit(:name, :crop, :farm_id)).destroy
 
-        redirect_to farms_path
-    end
-
-    
+    redirect_to farms_path
+  end
 end
