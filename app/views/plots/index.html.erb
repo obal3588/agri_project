@@ -16,7 +16,7 @@
 <td> <%=  p.crop %> </td>
 <td> <%= p.created_at.to_date %> </td>
 <td> <%= p.updated_at.to_date%> </td>
-
+<td><%= link_to 'Destroy', p, :confirm => 'Are you sure?', :method => :delete , :farm_id => @farm %></td>
 </td>
 </tr>
 <% end %>

@@ -28,9 +28,7 @@ class PlotsController < ApplicationController
   end
 
   def destroy
-    @farm = Farm.find(params[:farm_id])
-    @plot = @farm.plots(params.require(:plot).permit(:name, :crop, :farm_id)).destroy
-
+    Plot.find(params[:id]).destroy
     redirect_to farms_path
   end
 end
