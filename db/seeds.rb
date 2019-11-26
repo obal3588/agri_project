@@ -3,8 +3,8 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
 
 Farm.create(name: "farm 1", location: "Al-dilam")
 Farm.create(name: "mr.x farms", location: "Al-khobar")
@@ -16,6 +16,12 @@ Plot.create(name: "x", crop: "Carrot", farm_id: 2)
 Plot.create(name: "plot h", crop: "Cucumber", farm_id: 1)
 Plot.create(name: "d", crop: "okra", farm_id: 2)
 Plot.create(name: "plot z", crop: "pumpkin", farm_id: 1)
+
+Log.create(entry: "water", farm_id: 1, plot_id: 1)
+Log.create(entry: "fertelizer", farm_id: 1, plot_id: 2)
+Log.create(entry: "seed", farm_id: 1, plot_id: 3)
+Log.create(entry: "plow", farm_id: 2, plot_id: 2)
+Log.create(entry: "water", farm_id: 2, plot_id: 4)
 
 User.create! :email => "admin@gmail.com", :password => "123123", :password_confirmation => "123123", :admin => true
 User.create! :email => "emp@gmail.com", :password => "123123", :password_confirmation => "123123", :emp => true

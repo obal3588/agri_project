@@ -16,6 +16,7 @@
 <td> <%=  p.crop %> </td>
 <td> <%= p.created_at.to_date %> </td>
 <td> <%= p.updated_at.to_date%> </td>
+<td> <%= link_to "logs" , farm_plot_logs_path(plot_id:p.id) %> </td>
 <% if current_user.admin %>
 <td><a data-confirm="Are you sure you want to delete <%= p.name %>?" data-method="delete" href= "/farms/<%= p.farm_id %>/plots/<%=p.id%>" rel="nofollow">Delete Plot</a> </td>
 <td><%= link_to "edit" , edit_farm_plot_path(id: p.id)%> </td>
