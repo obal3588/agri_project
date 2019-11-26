@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :farms do
-    resources :plots
+    resources :plots do
+      resources :logs
+    end
   end
 
   get "/admin/makeemp", to: "admins#makeEmp"
