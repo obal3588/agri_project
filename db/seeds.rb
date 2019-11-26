@@ -18,3 +18,8 @@ Plot.create(name: 'x', crop:'Carrot', farm_id: 2)
 Plot.create(name: 'plot h', crop:'Cucumber', farm_id: 1)
 Plot.create(name: 'd', crop:'okra', farm_id: 2)
 Plot.create(name: 'plot z', crop:'pumpkin', farm_id: 1)
+
+
+User.create! :email => "admin@gmail.com", :password => "123123", :password_confirmation => "123123", :admin => true
+User.create! :email => "emp@gmail.com", :password => "123123", :password_confirmation => "123123", :emp => true
+User.create! :email => "user@gmail.com", :password => "123123", :password_confirmation => "123123", :admin => true
