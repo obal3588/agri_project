@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   resources :admins
-  resources :plots
+
   devise_for :users
-  resources :farms
-  # do
-  #   resources :plots
-  # end
+  resources :farms do
+    resources :plots
+  end
 
   root "home#index"
 
