@@ -18,19 +18,20 @@ class PlotsController < ApplicationController
 
   def edit
     @farm = Farm.find(params[:farm_id])
+    @plot = Plot.find(params[:id])
   end
 
   def update
     @farm = Farm.find(params[:farm_id])
-    @plot = @farm.plots.update(params.require(:plot).permit(:name, :crop, :farm_id))
+    @plot = @farm.plots.find(params[:id]).update(params.require(:plot).permit(:name, :crop))
 
-    redirect_to farms_path
+    redirect_to "/farms/#{params[:farm_id]}/plots"
   end
 
   def destroy
     @farm = Farm.find(params[:farm_id])
     @plot = @farm.plots.find(params[:id]).destroy
 
-    redirect_to farms_path
+    redirect_to "/farms/#{params[:farm_id]}/plots"
   end
 end
