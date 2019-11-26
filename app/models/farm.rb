@@ -1,3 +1,3 @@
 class Farm < ApplicationRecord
-    has_many :fields, dependent: :destroy
-    end
+  has_many :plots, dependent: :destroy
+end
