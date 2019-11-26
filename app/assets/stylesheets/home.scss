@@ -1,3 +1,27 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a{
+    color: #CD853F;
+    padding: 23px;
+}
+.navbar-custom { 
+    background-color: #006747FF;
+    text-align: center;
+    > li{
+        display: inline-block;
+        float: none;
+    > a {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    }
+} 
+.slides{
+    width: 70%; 
+    height: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
