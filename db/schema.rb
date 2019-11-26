@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_120652) do
+ActiveRecord::Schema.define(version: 2019_11_26_082422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,18 +22,18 @@ ActiveRecord::Schema.define(version: 2019_11_25_120652) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "fields", force: :cascade do |t|
+  create_table "homes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plots", force: :cascade do |t|
     t.string "name"
     t.string "crop"
     t.bigint "farm_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["farm_id"], name: "index_fields_on_farm_id"
-  end
-
-  create_table "homes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["farm_id"], name: "index_plots_on_farm_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,5 +50,5 @@ ActiveRecord::Schema.define(version: 2019_11_25_120652) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "fields", "farms"
+  add_foreign_key "plots", "farms"
 end

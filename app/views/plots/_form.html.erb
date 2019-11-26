@@ -1,0 +1,15 @@
+<%= form_for @plot do |f| %>
+<%= f.hidden_field :farm_id, :value => @farm.id %>
+
+<div>
+ <%= f.label :name, 'plot Name'%>
+ <%= f.text_field :name%>
+</div>
+
+<div>
+ <%= f.label :crop, 'crop' %>
+ <%= f.text_field :crop %>
+ </div>
+
+ <%= f.submit "Submit" %>
+ <% end %> 
