@@ -1,4 +1,5 @@
+
 <%= link_to  "farms", farms_path%>
-<% if current_user.admin || current_user.emp%>
-<%= link_to  "dash", admins_path%>
+<% if current_user.admin %>
+<%= link_to  "Admin Dashboard", admins_path%>
 <%end%>

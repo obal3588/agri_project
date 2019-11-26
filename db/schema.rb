@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_082422) do
+ActiveRecord::Schema.define(version: 2019_11_26_153529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,28 @@ ActiveRecord::Schema.define(version: 2019_11_26_082422) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "histories", force: :cascade do |t|
+    t.string "entry"
+    t.bigint "plot_id_id"
+    t.integer "farm_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plot_id_id"], name: "index_histories_on_plot_id_id"
+  end
+
   create_table "homes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "logs", force: :cascade do |t|
+    t.string "entry"
+    t.bigint "farm_id"
+    t.bigint "plot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["farm_id"], name: "index_logs_on_farm_id"
+    t.index ["plot_id"], name: "index_logs_on_plot_id"
   end
 
   create_table "plots", force: :cascade do |t|
@@ -50,5 +69,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_082422) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "logs", "farms"
+  add_foreign_key "logs", "plots"
   add_foreign_key "plots", "farms"
 end

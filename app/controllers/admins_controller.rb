@@ -5,6 +5,14 @@ class AdminsController < ApplicationController
 
   def makeEmp
     @user = User.find(params[:format])
-    @user.update(emp: true)
+    if @user.emp
+      @user.update(emp: false)
+    else
+      @user.update(emp: true)
+    end
+    redirect_to admins_path
+  end
+
+  def show
   end
 end

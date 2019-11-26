@@ -1,0 +1,11 @@
+<%= form_for  [@farm,@plot,@log ] do |f| %>
+<%= f.hidden_field :plot_id , :value => @plot.id  %>
+<%= f.hidden_field :farm_id , :value => @farm.id  %>
+
+<div>
+ <%= f.label :entry, 'entry Name'%>
+ <%= f.text_field :entry%>
+</div>
+
+ <%= f.submit "Submit" %>
+ <% end %> 
