@@ -6,14 +6,14 @@ class PlotsController < ApplicationController
 
   def new
     @farm = Farm.find(params[:farm_id])
-    @plot = Plot.new
+    @plot = @farm.plots.new
   end
 
   def create
     @farm = Farm.find(params[:plot][:farm_id])
     @plot = @farm.plots.create(params.require(:plot).permit(:name, :crop, :farm_id))
 
-    redirect_to plots_path(farm_id: @farm.id)
+    redirect_to farm_plots_path(farm_id: @farm.id)
   end
 
   def edit
@@ -29,7 +29,7 @@ class PlotsController < ApplicationController
 
   def destroy
     @farm = Farm.find(params[:farm_id])
-    @plot = @farm.plots(params.require(:plot).permit(:name, :crop, :farm_id)).destroy
+    @plot = @farm.plots.find(params[:id]).destroy
 
     redirect_to farms_path
   end
