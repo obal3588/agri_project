@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :histories
   resources :admins
 
   devise_for :users
@@ -10,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   get "/admin/makeemp", to: "admins#makeEmp"
+
+  get "/home/qr", to: "home#qr"
   root "home#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
