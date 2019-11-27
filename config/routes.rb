@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get "/admin/makeemp", to: "admins#makeEmp"
 
-  get "/home/qr", to: "home#qr"
+  get "/log/qr", to: "logs#generateQrcode"
   root "home#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
