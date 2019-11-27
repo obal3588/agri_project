@@ -1,15 +1,15 @@
-<table>
+<table class="table table-striped" >
+<thead>
     <tr>
-        <th>User's Email</th>
-        <th>Roll.EMP</th>
-        <th>Make employee</th>
+        <th scope="col" class="bg-success" style="width:20%">User's Email</th>
+        <th scope="col" class="bg-success" style="width:20%">Roll.EMP</th>
+        <th scope="col" class="bg-success" style="width:20%">Make employee</th>
     </tr>
     </thead>
     <tbody>
-      
         <% @users.each do |user|%>
         <tr>
-        <td><%= user.email %></td>
+        <td ><%= user.email %></td>
         <td> <%=user.emp%></td>
         <td><%= link_to  "Assign Emp ", admin_makeemp_path(user.id) %></td>
         </tr>
@@ -17,5 +17,7 @@
        
     </tbody>
 </table>
-<button> <%= link_to 'Back', :back %></button> 
-<button> <%= link_to 'sign out' ,destroy_user_session_path,method: :delete  %></button> 
+
+
+<button class="butt" class="text-center" > <%= link_to 'Back', :back %></button> 
+<button class="butt"> <%= link_to 'sign out' ,destroy_user_session_path,method: :delete  %></button> 
