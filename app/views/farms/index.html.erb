@@ -1,7 +1,11 @@
-<table>
+<table class="table table-striped" >
+<thead>
 <tr>
-<th>name</th>
-<th>location</th>
+<th scope="col" class="bg-success">Name</th>
+<th scope="col" class="bg-success">Location</th>
+<th scope="col" class="bg-success">Delete Farm</th>
+<th scope="col" class="bg-success">Edit Farm</th>
+
 </tr>
 </thead>
 
@@ -14,7 +18,7 @@
 
 <% if current_user.admin %>
 
-<td><a data-confirm="Are you sure you want to delete <%= farm.name %>?" data-method="delete" href="/farms/<%= farm.id %>" rel="nofollow">Delete Farms</a> </td>
+<td><a data-confirm="Are you sure you want to delete <%= farm.name %>?" data-method="delete" href="/farms/<%= farm.id %>" rel="nofollow">Delete</a> </td>
 
 <td><a href="<%= edit_farm_path(farm) %>" > Edit </a></td>
 <%end%>
@@ -24,9 +28,11 @@
 <% end %>
 </body>
 </table>
-<button>  <%= link_to 'sign out' ,destroy_user_session_path,method: :delete  %></button> 
-<button> <%= link_to 'Back', :back %></button> 
+
+<br/>
+
+<button class="butt1" > <%= link_to 'Back', :back %></button> 
 <% if current_user.admin || current_user.emp%>
-<button> <%= link_to "Add New farm", new_farm_path %> </button>
+<button class="butt1"> <%= link_to "Add New farm", new_farm_path %> </button>
 <%end%>
 
