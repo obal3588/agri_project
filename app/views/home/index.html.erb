@@ -1,12 +1,12 @@
+
 <nav class="navbar navbar-expand-md p-3 mb-2 navbar navbar-custom">
-<a class="navbar-brand" href="/">AGRI</a>
+<a class="navbar-brand" href="/"><img src="https://i.ibb.co/w0gHvf5/LOGOFINAL.png" class="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto" >
-      <% if current_user%>ra
-           
+      <% if current_user%>
          <li> <%= link_to 'Sign out' ,destroy_user_session_path,method: :delete  %>
           <%= render "home/wlc"%> </li>   
        <%else%>
@@ -15,9 +15,12 @@
        <%end%>
     </ul>
   </div>
-</nav>
+  </nav>
 <div class='box'>
-    <h2> Agriculture </h2>
+  <h2> Agriculture </h2>
   <h3> Find your crops details easily! </h3>
 </div>
+
+
+
 

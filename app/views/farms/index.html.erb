@@ -1,9 +1,28 @@
-<table>
-    <tr>
-        <th>name</th>
-        <th>location</th>
-    </tr>
-    </thead>
+<nav class="navbar navbar-expand-md p-1 mb-1 navbar navbar-custom">
+<a class="navbar-brand" href="/">AGRI</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+<%= link_to  "Farms", farms_path%>
+<% if current_user.admin %>
+<%= link_to  "Admin Dashboard", admins_path%>
+<%end%>
+</div>
+</nav>
+
+<table class="table table-striped">
+<thead>
+<tr>
+<th scope="col" class="bg-success"> Name </th>
+<th scope="col" class="bg-success"> Location </th>
+   <% if current_user.admin %>
+<th scope="col" class="bg-success"> Delete Farm </th>
+<th scope="col" class="bg-success"> Edit Farm </th>
+<%end%>
+
+</tr>
+</thead>
 
     <tbody>
         <% @farms.each do |farm| %>
@@ -14,19 +33,22 @@
 
             <% if current_user.admin %>
 
-            <td><a data-confirm="Are you sure you want to delete <%= farm.name %>?" data-method="delete"
-                    href="/farms/<%= farm.id %>" rel="nofollow">Delete Farms</a> </td>
+<td><a data-confirm="Are you sure you want to delete <%= farm.name %>?" data-method="delete" href="/farms/<%= farm.id %>" rel="nofollow">Delete</a> </td>
 
             <td><a href="<%= edit_farm_path(farm) %>"> Edit </a></td>
             <%end%>
 
-            </td>
-        </tr>
-        <% end %>
-        </body>
+</td>
+</tr>
+<% end %>
+</tbody>
 </table>
-<button> <%= link_to 'sign out' ,destroy_user_session_path,method: :delete  %></button>
-<button> <%= link_to 'Back', :back %></button>
-<% if current_user.admin %>
-<button> <%= link_to "Add New farm", new_farm_path %> </button>
-<%end%>
+
+<br/>
+
+<div class="text-center">
+    <button class="butt1" > <%= link_to 'Back', :back %></button> 
+    <% if current_user.admin || current_user.emp%>
+    <button class="butt1"> <%= link_to "Add New farm", new_farm_path %> </button>
+    <%end%>
+</div>
